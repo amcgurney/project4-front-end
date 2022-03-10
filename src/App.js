@@ -11,17 +11,17 @@ import Users from "./pages/users";
 
 function App() {
   // URL should have YOUR HEROKU URL for your backend, make sure you include the trailing slash
-  const URL = "https://express-reactlab.herokuapp.com/";
+  // const URL = "http://localhost:3000";
 
   return (
     <div className="App">
       <Header />
       <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route path="/about" element={<About URL={URL} />} />
-        <Route path="/post" element={<Post URL={URL} />} />
-      </Routes>
-      <Footer />
+         <Route exact path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/posts" element={<Posts />} />
+        <Route path="/users" element={<Users />} />
+      </Routes> 
     </div>
   );
 }

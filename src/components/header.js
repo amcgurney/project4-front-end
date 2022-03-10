@@ -15,7 +15,7 @@ function Header(props) {
     <header>
       <h1>Musician's Friend</h1>
       <nav style={navStyle}>
-        {/* <Link to="/">
+        <Link to="/">
           <div>HOME</div>
         </Link>
         <Link to="/about">
@@ -23,9 +23,10 @@ function Header(props) {
         </Link>
         <Link to="/posts">
           <div>POSTS</div>
+        </Link>  
         <Link to="/users">
           <div>USERS</div>
-        </Link> */}
+        </Link>
       </nav>
     </header>
   );
