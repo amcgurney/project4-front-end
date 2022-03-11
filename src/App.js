@@ -1,5 +1,5 @@
 import "./App.css";
-
+// import "bootstrap/dist/css/bootstrap.min.css";
 // IMPORT COMPONENTS
 import Header from "./components/header";
 import { Route, Routes } from "react-router-dom";
