@@ -11,7 +11,7 @@ import Users from "./pages/users";
 
 function App() {
   // URL should have YOUR HEROKU URL for your backend, make sure you include the trailing slash
-  // const URL = "http://localhost:3000";
+  const URL = "http://localhost:4000";
 
   return (
     <div className="App">
@@ -20,7 +20,7 @@ function App() {
          <Route exact path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/posts" element={<Posts />} />
-        <Route path="/users" element={<Users />} />
+        <Route path="/users" element={<Users URL={URL} />} />
       </Routes> 
     </div>
   );

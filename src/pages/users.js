@@ -2,13 +2,36 @@ import React from 'react'
 import { useState } from "react"
 import { Link } from "react-router-dom"
 
- const Users = (props) => {
+
+ const Users = () => {
     // state to hold formData
     const [newForm, setNewForm] = useState({
         name: "",
         email: "",
         password: "",
     });
+    const [user, setUser]=useState(null)
+
+    const URL = "http://localhost:4000/user";
+
+    const getUsers = async () => {
+        const response = await fetch(URL);
+        const data = await response.json();
+        setUser(data);
+    };
+
+    const createUsers = async (user) => {
+        //make post request to create user
+        await fetch(URL + "/register", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        body: JSON.stringify(user), 
+        });
+        // update list of users
+        getUsers();
+    };
 
     // handleChange function for form
     const handleChange = (event) => {
@@ -18,17 +41,16 @@ import { Link } from "react-router-dom"
     // handle submit function for form
     const handleSubmit = (event) => {
         event.preventDefault();
-        props.createUsers(newForm);
+        createUsers(newForm);
         setNewForm({
             name: "",
             email: "",
             password: "",
         });
     };
-
     // loaded function
     const loaded = () => {
-        return props.users.map((user) => (
+        return user.map((user) => (
             <div key={user._id} className="user">
                 <Link to={`/users/${user._id}`}><h1>{user.name}</h1></Link>
                 <img src={user.image} alt={user.name} />
@@ -37,10 +59,7 @@ import { Link } from "react-router-dom"
         ));
     };
 
-    
-        
-  
-    return (
+   return (
         <section>
             <form onSubmit={handleSubmit}>
                 <input
@@ -69,7 +88,7 @@ import { Link } from "react-router-dom"
             {/* {props.users ? loaded() : loading()} */}
         </section>
     );
-    return newForm ? loaded(): <h1>Loading...</h1>;
+    // return newForm ? loaded(): <h1>Loading...</h1>;
 }
 
 export default Users;
