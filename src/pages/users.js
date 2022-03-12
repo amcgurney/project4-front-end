@@ -85,10 +85,8 @@ import { Link } from "react-router-dom"
                 />
                 <input type="submit" value="Create User" />
             </form>
-            {/* {props.users ? loaded() : loading()} */}
         </section>
     );
-    // return newForm ? loaded(): <h1>Loading...</h1>;
 }
 
 export default Users;
