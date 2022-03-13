@@ -21,7 +21,7 @@ const Posts = () => {
   };
 
   const createPosts = async (post) => {
-    await fetch(URL + "/new%post", {
+    await fetch(URL + "/new_post", {
       method: "POST",
       headers: {
         "Content-type": "application/json",        

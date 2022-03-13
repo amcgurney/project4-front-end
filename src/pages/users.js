@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 
 const Users = () => {
@@ -28,8 +28,18 @@ const Users = () => {
             },
         body: JSON.stringify(user), 
         });
-        // update list of users
         getUsers();
+    };
+
+    const deleteUsers = async (user) => {
+        await fetch(URL + "/:id", {
+            method: "DELETE",
+            headers: {
+                "Content-type": "application/json",              
+            },
+            body: JSON.stringify(user),
+        });
+        deleteUsers();
     };
 
     // handleChange function for form
@@ -83,9 +93,12 @@ const Users = () => {
                     onChange={handleChange}
                 />
                 <input type="submit" value="Create User" />
+                <input type="delete" value="Delete User" />
             </form>
         </section>
     );
 }
 
 export default Users;
+
+
