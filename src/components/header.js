@@ -24,8 +24,8 @@ function Header(props) {
         <Link to="/posts">
           <div>POSTS</div>
         </Link>  
-        <Link to="/users">
-          <div>USERS</div>
+        <Link to="/user">
+          <div>USER</div>
         </Link>
       </nav>
     </header>
