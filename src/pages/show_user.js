@@ -5,20 +5,17 @@ import { useState, useEffect } from "react";
 function Show(props) {
     const id = useParams()
     // const users = props.users
-console.log(id);
+    console.log(id);
     // console.log(users)
 
     const [user, setUser] = useState([]);
     const getUserData = async () => {
         const response = await fetch(`http://localhost:4000/user`);
-        // console.log(response)
         const data = await response.json();
         const match  = data.find(u => u._id === id.id)
-        // console.log(data)
         setUser(match   );
     };
     const updateUser = async (user, id) => {
-        // make put request to create people
         await fetch(props.URL + "user/" + id, {
             method: "put",
             headers: {
@@ -30,7 +27,6 @@ console.log(id);
         getUserData()
     }
 
-    useEffect(() => getUserData(), []);
 
     const [editForm, setEditForm] = useState(user)
 
@@ -43,7 +39,28 @@ console.log(id);
     const handleSubmit = event => {
         event.preventDefault()
         updateUser(editForm, user._id)
-        // redirect people back to index
+    }
+    // user delete function
+    // const deleteUser = async (user, id); {
+    //         fetch(props.URL + "user/" + id, {
+    //         method: "delete",
+    //         headers: {
+    //             "Content-Type": "application/json",
+    //         },
+    //         body: JSON.stringify(user),
+    //     });
+    //     getUserData();
+    // };
+
+    const deleteUser = async id => {
+        await fetch(props.URL + "user/" + id, {
+            method: "delete",
+        })
+        getUserData();
+    };
+
+    const removeUser = () => {
+        deleteUser(user._id)
         // props.history.push("/")
     }
 
@@ -55,6 +72,7 @@ console.log(id);
                 <h3>email: {user.email}</h3>
                 <h3>bio: {user.bio}</h3>
                 <img src={user.image} alt={user.name} />
+                <button id="delete" onClick={removeUser}>Delete</button>
                 <form onSubmit={handleSubmit}>
                 <input
                     type="text"
@@ -102,6 +120,9 @@ console.log(id);
         <h1>nothing loaded</h1>
       )  
     }
+
+    useEffect(() => getUserData(), []);
+
     return user ? loading():notloading()
 }
 
