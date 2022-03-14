@@ -12,7 +12,7 @@ import Show from "./pages/show_user";
 
 function App() {
   // URL should have YOUR HEROKU URL for your backend, make sure you include the trailing slash
-  const URL = "http://localhost:4000/";
+  const URL = "https://proj4-bckend.herokuapp.com/"; 
 
   return (
     <div className="App">
