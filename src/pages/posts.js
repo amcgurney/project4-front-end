@@ -56,8 +56,12 @@ const Posts = () => {
     ));
   };
 
+  
+
 return (
+  
   <section>
+    <h2>We're working hard to bring you this feature very soon!</h2>
     <form onSubmit={handleSubmit}>
       <input
         type="text"
@@ -83,6 +87,7 @@ return (
       <input type="submit" value="Create Post" />
 
     </form>
+    <img src="https://www.safetysupplywarehouse.com/v/vspfiles/photos/10360-2T.jpg" alt="construction"/>
   </section>
 );
 }
