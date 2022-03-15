@@ -10,7 +10,7 @@ function Show(props) {
 
     const [user, setUser] = useState([]);
     const getUserData = async () => {
-        const response = await fetch(`http://localhost:4000/user`);
+        const response = await fetch(`https://proj4-bckend.herokuapp.com/user`);
         const data = await response.json();
         const match  = data.find(u => u._id === id.id)
         setUser(match   );
@@ -40,17 +40,6 @@ function Show(props) {
         event.preventDefault()
         updateUser(editForm, user._id)
     }
-    // user delete function
-    // const deleteUser = async (user, id); {
-    //         fetch(props.URL + "user/" + id, {
-    //         method: "delete",
-    //         headers: {
-    //             "Content-Type": "application/json",
-    //         },
-    //         body: JSON.stringify(user),
-    //     });
-    //     getUserData();
-    // };
 
     const deleteUser = async id => {
         await fetch(props.URL + "user/" + id, {
