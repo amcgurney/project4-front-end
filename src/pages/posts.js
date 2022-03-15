@@ -61,7 +61,7 @@ const Posts = () => {
 return (
   
   <section>
-    <h2>We're working hard to bring you this feature very soon!</h2>
+    
     <form onSubmit={handleSubmit}>
       <input
         type="text"
@@ -87,7 +87,10 @@ return (
       <input type="submit" value="Create Post" />
 
     </form>
-    <img src="https://www.safetysupplywarehouse.com/v/vspfiles/photos/10360-2T.jpg" alt="construction"/>
+    <h2>We're working hard to bring you this feature very soon!</h2>    
+    <div className='post'>
+      <img src="https://i.pinimg.com/originals/6c/67/ce/6c67ce1557d591b11d36100307ad5c30.gif" alt="construction"/>
+    </div>
   </section>
 );
 }
