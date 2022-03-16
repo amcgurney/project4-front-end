@@ -57,48 +57,50 @@ function Show(props) {
         return (
             <div className="person">
                 <h2>Users</h2>
-                <h3>name: {user.name}</h3>
-                <h3>email: {user.email}</h3>
-                <h3>bio: {user.bio}</h3>
+                <h3>Name: {user.name}</h3>
+                <h3>Email: {user.email}</h3>
+                <h3>Bio: {user.bio}</h3>
                 <img src={user.image} alt={user.name} />
-                <button id="delete" onClick={removeUser}>Delete</button>
-                <form onSubmit={handleSubmit}>
+                
+                <form class="form" onSubmit={handleSubmit}>
                 <input
                     type="text"
                     value={editForm.name}
                     name="name"
-                    placeholder="name"
+                    placeholder="Name"
                     onChange={handleChange}
                 />
                 <input
                     type="text"
                     value={editForm.email}
                     name="email"
-                    placeholder="email"
+                    placeholder="Email"
                     onChange={handleChange}
                 />
                 <input
                     type="text"
                     value={editForm.password}
                     name="password"
-                    placeholder="password"
+                    placeholder="Password"
                     onChange={handleChange}
                 />
                 <input
                     type="text"
                     value={editForm.bio}
                     name="bio"
-                    placeholder="bio"
+                    placeholder="Bio"
                     onChange={handleChange}
                 />
                 <input
                     type="text"
                     value={editForm.image}
                     name="image"
-                    placeholder="image"
+                    placeholder="Image"
                     onChange={handleChange}
                 />
+
                 <input type="submit" value="Update Person" />
+                <button class="button" id="delete" onClick={removeUser}>Delete</button>
             </form>
             </div>
         )

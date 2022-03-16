@@ -62,40 +62,40 @@ function User(props) {
     };
     return (
         <section>
-            <form onSubmit={handleSubmit}>
+            <form class="form" onSubmit={handleSubmit}>
                 <input
                     type="text"
                     value={newUser.name}
                     name="name"
-                    placeholder="name"
+                    placeholder="Name"
                     onChange={handleChange}
                 />
                 <input
                     type="text"
                     value={newUser.email}
                     name="email"
-                    placeholder="email"
+                    placeholder="Email"
                     onChange={handleChange}
                 />
                 <input
                     type="text"
                     value={newUser.password}
                     name="password"
-                    placeholder="password"
+                    placeholder="Password"
                     onChange={handleChange}
                 />
                 <input
                     type="text"
                     value={newUser.bio}
                     name="bio"
-                    placeholder="bio"
+                    placeholder="Bio"
                     onChange={handleChange}
                 />
                 <input
                     type="text"
                     value={newUser.image}
                     name="image"
-                    placeholder="image"
+                    placeholder="Image"
                     onChange={handleChange}
                 />
                 <input type="submit" value="Create User" />

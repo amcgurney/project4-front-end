@@ -3,15 +3,16 @@
 // --------------------------
 $maincolor: black;
 $contrastcolor: white;
+$blue: #0088cc;
 
 @mixin white-text-black-bg {
-    color: $contrastcolor;
-    background-color: $maincolor;
+  color: $contrastcolor;
+  background-color: $maincolor;
 }
 
 @mixin black-test-white-bg {
-    color: $maincolor;
-    background-color: $contrastcolor;
+  color: $maincolor;
+  background-color: $contrastcolor;
 }
 
 // --------------------------
@@ -19,15 +20,67 @@ $contrastcolor: white;
 // --------------------------
 
 nav {
-    @include white-text-black-bg;
-    display: flex;
-    justify-content: flex-start;
+  @include white-text-black-bg;
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px;
 
-    a {
-        @include white-text-black-bg;
-        div {
-            margin: 10px;
-            font-size: large;
-        }
+  a {
+    @include white-text-black-bg;
+    border-bottom: 2px solid $maincolor;
+    letter-spacing: 1.13px;
+    padding: 5px;
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 2px;
+
+    &:hover,
+    &:active, 
+    &:focus {
+      text-decoration: none;
+      border-bottom: 2px solid $blue;
+      color: $blue;
+      transition: all 0.3s ease-in-out;
     }
+    div {
+      font-size: large;
+    }
+  }
+}
+
+// --------------------------
+// Forms
+// --------------------------
+.button {
+  background: $blue;
+  color: $contrastcolor;
+  text-transform: uppercase;
+  border: 2px solid $blue;
+  margin-top: 15px;
+  transition: all 0.3s ease-in-out;
+  font-weight: bold;
+  letter-spacing: 1.13px;
+  padding: 15px;
+  &:hover,
+  &:active {
+    background: $contrastcolor;
+    color: $blue;
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  input {
+    border: 2px solid #000;
+    border-radius: 1px;
+    padding: 15px;
+    margin: 10px 0;
+    &[type="submit"] {
+      @extend .button;
+    }
+  }
 }

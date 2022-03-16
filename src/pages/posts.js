@@ -62,26 +62,26 @@ return (
   
   <section>
     
-    <form onSubmit={handleSubmit}>
+    <form class="form" onSubmit={handleSubmit}>
       <input
         type="text"
         value={newForm.user}
         name="user"
-        placeholder="user"
+        placeholder="User"
         onChange={handleChange}
       />
       <input
-        type="string"
+        type="text"
         value={newForm.comment}
         name="comment"
-        placeholder="comment"
+        placeholder="Comment"
         onChange={handleChange}
       />
       <input
         type="text"
         value={newForm.date}
         name="date"
-        placeholder="date"
+        placeholder="Date"
         onChange={handleChange}
       />
       <input type="submit" value="Create Post" />

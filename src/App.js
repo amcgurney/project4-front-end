@@ -17,16 +17,14 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Routes>
-         <Route exact path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/posts" element={<Posts />} />
-        <Route path="/user" element={<Users URL={URL} />} />
-        <Route path="/user/:id" element={<Show URL={URL} />} />
-        
-      </Routes> 
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+              <Route path="/posts" element={<Posts />} />
+            <Route path="/user" element={<Users URL={URL} />} />
+          <Route path="/user/:id" element={<Show URL={URL} />} />
+        </Routes> 
     </div>
   );
 }
-
 export default App;
