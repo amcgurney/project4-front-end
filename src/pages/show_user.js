@@ -4,9 +4,7 @@ import { useState, useEffect } from "react";
 
 function Show(props) {
     const id = useParams()
-    // const users = props.users
     console.log(id);
-    // console.log(users)
 
     const [user, setUser] = useState([]);
     const getUserData = async () => {
