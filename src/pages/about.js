@@ -11,7 +11,7 @@ import React from 'react'
 
       <div className='test-container'>
         <figure>
-          <img src="https://www.sohh.com/wp-content/uploads/2021/08/travis-scott-interview-758x569.jpg" alt="travis"/>
+          <img src="https://i.redd.it/md649pws89c11.jpg" alt="travis"/>
           <figcaption><em>"MFV? Oh, it's definitely lit"</em><br></br> Travis Scott </figcaption>
         </figure>
         <figure>
